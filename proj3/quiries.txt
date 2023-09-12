@@ -1,0 +1,38 @@
+1. >>>> 😥 <<<<
+query getAllUserDetails{
+  users {
+    firstName
+    lastName
+  }
+}
+2. >>>> 😎 <<<<
+query getAllQuotesDetails{
+  quotes {
+    by
+    name
+  }
+}
+
+3. >>>> 👦 <<<<
+query getAllUserDetailsWithTheirQuotes{
+  users {
+    firstName
+    lastName
+    quotes {
+      name
+    }
+  }
+}
+
+4. >>>> 🤖 <<<<
+query getAllQuotesWithUserDetails{
+  quotes {
+    by
+    name
+    details {
+      email
+      firstName
+      lastName
+    }
+  }
+}
