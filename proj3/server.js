@@ -22,14 +22,18 @@ const typeDefs = `#graphql
     type Query{
         greet:String
         users:[User]
+        user(id:ID!):User
         quotes:[Quote]
+        quote(by:ID!):[Quote]
     }
 `
 const resolvers = {
     Query:{
         greet:()=> "Hello World",
         users:() => users,
-        quotes:()=>quotes
+        user:(_,args) => users?.find(user=>user.id === args?.id),
+        quotes:()=>quotes,
+        quote:(_,{by}) => quotes?.filter(quote=>quote.by === by),
     },
     User:{
         quotes:(user)=>quotes?.filter(quote=>quote?.by === user.id)

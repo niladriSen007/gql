@@ -36,3 +36,20 @@ query getAllQuotesWithUserDetails{
     }
   }
 }
+
+
+5. >>>> 🤖 <<<<
+query getSingleUser($userId: ID!){
+  user(id: $userId) {
+    firstName,
+    lastName
+  }
+}
+
+
+6. >>>> 🤖 <<<<
+query getQuotesByUserId( $by: ID!){
+  quote(by: $by) {
+    name
+  }
+}
